@@ -1,0 +1,258 @@
+/* ======================================= */
+/* CSS para o Visual Neon e Dark Mode */
+/* ======================================= */
+:root {
+    --cor-fundo: #0A0A1F;
+    --cor-primaria: #00FFFF; /* Ciano/Azul Elétrico */
+    --cor-secundaria: #9933FF; /* Roxo Neon */
+    --cor-texto: #E0E0FF;
+    --sombra-neon: 0 0 10px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 255, 255, 0.4);
+    --transicao: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ------------------ Header e Navegação ------------------ */
+header {
+    background-color: rgba(10, 10, 31, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    text-shadow: var(--sombra-neon);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 30px;
+    margin-right: 10px;
+    filter: drop-shadow(0 0 5px var(--cor-primaria));
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 400;
+    transition: var(--transicao);
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: var(--cor-primaria);
+    text-shadow: var(--sombra-neon);
+}
+
+/* ------------------ Seções Principais ------------------ */
+main {
+    padding-top: 80px; /* Espaço para o header fixo */
+}
+
+.page-section {
+    display: none; /* Todas as seções são escondidas por padrão */
+    padding: 100px 5%;
+    min-height: calc(100vh - 80px); /* Ajusta a altura mínima */
+}
+
+/* A HOME PAGE é a única que fica visível ao carregar */
+#home-page {
+    display: block; 
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--cor-secundaria);
+    margin-bottom: 50px;
+    text-align: center;
+    border-bottom: 2px solid var(--cor-primaria);
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* ------------------ HERO (Home Page) ------------------ */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 150px 5% 50px;
+    background: linear-gradient(135deg, rgba(10, 10, 31, 1) 0%, rgba(10, 10, 31, 0.9) 50%, rgba(10, 10, 31, 0.8) 100%),
+                 url('https://via.placeholder.com/1500x800/0A0A1F/00FFFF?text=Circuito+Digital') no-repeat center center/cover;
+}
+
+.hero-content { max-width: 600px; }
+.hero-content h1 { font-size: 4rem; font-weight: 700; color: white; margin-bottom: 20px; }
+.hero-content p { font-size: 1.2rem; margin-bottom: 30px; color: var(--cor-texto); }
+
+.cta-button {
+    display: inline-block; background: none; border: 2px solid var(--cor-primaria); color: var(--cor-primaria); padding: 12px 30px;
+    text-decoration: none; font-weight: 600; border-radius: 5px; transition: var(--transicao); cursor: pointer;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+.cta-button:hover { background-color: var(--cor-primaria); color: var(--cor-fundo); box-shadow: var(--sombra-neon); }
+
+.hero-image {
+    /* Use a imagem do seu perfil aqui, se estiver em IMG/foto.png */
+    width: 400px; height: 400px; 
+    background: url('IMG/joao.jpeg') center center/cover; /* Mude para o caminho correto da sua imagem! */
+    border-radius: 50%; border: 5px solid var(--cor-secundaria); 
+    box-shadow: 0 0 30px var(--cor-secundaria);
+}
+
+/* ------------------ Projetos (Home Page) ------------------ */
+#projetos { text-align: center; }
+.projetos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px; }
+.projeto-card { background-color: #1A1A3A; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+     border-left: 3px solid var(--cor-secundaria); transition: var(--transicao); cursor: pointer; }
+.projeto-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(153, 51, 255, 0.3); }
+.projeto-card h3 { color: var(--cor-primaria); margin-bottom: 15px; font-size: 1.5rem; }
+.projeto-card p { font-size: 0.95rem; color: var(--cor-texto); margin-bottom: 20px; }
+.projeto-card a { color: var(--cor-primaria); text-decoration: none; margin: 0 10px; font-weight: 600; transition: color 0.3s; }
+
+/* ------------------ Contato (Ícones Sociais) ------------------ */
+#contato { 
+    text-align: center; 
+    background-color: #0F0F2A; 
+    border-top: 1px solid rgba(153, 51, 255, 0.2); 
+    padding-bottom: 100px; /* Adicionado um padding extra para o visual */
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Espaço entre os ícones */
+    margin-top: 50px;
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 20px;
+    border-radius: 10px;
+    transition: var(--transicao);
+    box-shadow: 0 0 10px rgba(153, 51, 255, 0.2);
+    border: 1px solid rgba(153, 51, 255, 0.4);
+    background-color: #1A1A3A;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px var(--cor-secundaria);
+}
+
+.social-icon img {
+    width: 60px; /* Tamanho do ícone */
+    height: 60px;
+    margin-bottom: 10px;
+    /* Efeito neon simulado com drop-shadow no ícone */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+}
+
+.whatsapp-icon:hover {
+    border-color: #25D366; /* Cor do WhatsApp no hover */
+}
+
+.instagram-icon:hover {
+    border-color: #C13584; /* Cor do Instagram no hover */
+}
+
+/* ------------------ Detalhes de Projeto (Página Detalhe) ------------------ */
+#project-detail-page { background-color: var(--cor-fundo); }
+.detalhes-container {
+    max-width: 1000px; margin: 0 auto; background-color: #151535; padding: 40px; border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); border: 1px solid rgba(153, 51, 255, 0.2);
+}
+.mockup-img {
+    width: 100%; height: auto; border-radius: 8px; margin-bottom: 30px; border: 2px solid var(--cor-primaria);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+.tecnologias-usadas span {
+    display: inline-block; background-color: var(--cor-secundaria); color: white; padding: 5px 15px;
+    border-radius: 20px; margin: 5px; font-size: 0.9rem; font-weight: 600;
+}
+.links-projeto a {
+    display: inline-block; margin-right: 20px; margin-top: 20px; background-color: var(--cor-primaria);
+    color: var(--cor-fundo); padding: 10px 25px; text-decoration: none; border-radius: 5px;
+    font-weight: 600; transition: var(--transicao);
+}
+.links-projeto a:hover { opacity: 0.9; box-shadow: var(--sombra-neon); }
+
+/* ------------------ Habilidades (Página Habilidades) ------------------ */
+.habilidades-grid {
+    max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+.categoria-card {
+    background-color: #1A1A3A; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-top: 5px solid var(--cor-secundaria);
+}
+.categoria-card h3 { color: var(--cor-primaria); margin-bottom: 20px; font-size: 1.6rem; text-align: center; }
+.categoria-card ul { list-style: none; }
+.categoria-card ul li {
+    padding: 10px 0; border-bottom: 1px dashed rgba(255, 255, 255, 0.1); display: flex;
+    justify-content: space-between; align-items: center;
+}
+.categoria-card ul li:last-child { border-bottom: none; }
+.nivel {
+    font-size: 0.85rem; background-color: #333; padding: 3px 8px; border-radius: 5px; color: white;
+}
+
+/* ------------------ Rodapé ------------------ */
+footer {
+    text-align: center; padding: 30px; background-color: #050510; border-top: 1px solid rgba(0, 255, 255, 0.1);
+    color: #AAAAFF; font-size: 0.9rem;
+}
+
+/* ------------------ Responsividade Básica ------------------ */
+@media (max-width: 768px) {
+    header { flex-direction: column; }
+    nav ul { margin-top: 10px; flex-wrap: wrap; justify-content: center; }
+    nav ul li { margin: 5px 15px; }
+    #hero { flex-direction: column-reverse; text-align: center; }
+    .hero-content { margin-top: 50px; }
+    .hero-image { width: 250px; height: 250px; }
+    .hero-content h1 { font-size: 3rem; }
+    .page-section { padding: 50px 5%; }
+    .social-links { flex-direction: column; gap: 20px; }
+}

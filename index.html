@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Victor | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+
+    <header>
+        <a onclick="showSection('home-page')" class="logo">
+            <img src="IMG/logo.png" alt="Logo JV.DEV">
+            JV.008
+        </a>
+        <nav>
+            <ul>
+                <li><a onclick="showSection('home-page')">Início</a></li>
+                <li><a onclick="showSection('habilidades-page')">Habilidades</a></li>
+                <li><a onclick="showSection('home-page', 'contato')">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="home-page" class="page-section">
+            
+            <section id="hero">
+                <div class="hero-content">
+                    <h1>João Victor</h1>
+                    <p>Olá! Sou um Desenvolvedor de Sistemas de 17 anos, apaixonado por transformar ideias em soluções robustas e otimizadas através do código.</p>
+                    <a onclick="scrollToSection('projetos')" class="cta-button">Ver Meus Projetos</a>
+                </div>
+                <div class="hero-image"></div>
+            </section>
+
+            <section id="sobre">
+                <h2> Sobre Mim</h2>
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <p style="font-size: 1.1rem; margin-bottom: 30px; color: #CCCCCC;">
+                        Minha jornada na programação começou cedo. Tenho um forte foco em Desenvolvimento Web e Lógica de Sistemas, buscando sempre as melhores práticas para performance e usabilidade. Para ver minha stack completa, clique em Habilidades.
+                    </p>
+                </div>
+            </section>
+
+            <section id="projetos">
+                <h2> Meus Trabalhos Recentes</h2>
+                <div class="projetos-grid">
+                    <article class="projeto-card" onclick="showDetail('Sistema de Gerenciamento Escolar', 'Python/Django/SQL', 'Sistema Web completo para administração de notas, presenças e comunicação entre professores e pais. O desafio técnico foi garantir a segurança dos dados e desenvolver uma interface de usuário intuitiva para diferentes perfis (administrador, professor e pai/aluno).')">
+                        <h3>Sistema de Gerenciamento Escolar</h3>
+                        <p>Sistema Web completo para administração de notas, presenças e comunicação entre professores e pais. Desenvolvido com Python/Django.</p>
+                        <a href="#" onclick="event.preventDefault(); showDetail('Sistema de Gerenciamento Escolar', 'Python/Django/SQL', 'Sistema Web completo para administração de notas, presenças e comunicação entre professores e pais. O desafio técnico foi garantir a segurança dos dados e desenvolver uma interface de usuário intuitiva para diferentes perfis (administrador, professor e pai/aluno).')">Ver Detalhes</a> | 
+                        <a href="#" target="_blank">Código (GitHub)</a>
+                    </article>
+
+                    <article class="projeto-card" onclick="showDetail('E-commerce de Livros (Mock-up)', 'HTML/CSS/JavaScript Vanilla', 'Interface de loja virtual moderna e responsiva focada na experiência do usuário e na arquitetura frontend limpa. Foco em UX e performance de carregamento.')">
+                        <h3>E-commerce de Livros (Mock-up)</h3>
+                        <p>Interface de loja virtual moderna e responsiva focada na experiência do usuário. Foco em HTML, CSS e JavaScript Vanilla.</p>
+                        <a href="#" onclick="event.preventDefault(); showDetail('E-commerce de Livros (Mock-up)', 'HTML/CSS/JavaScript Vanilla', 'Interface de loja virtual moderna e responsiva focada na experiência do usuário e na arquitetura frontend limpa. Foco em UX e performance de carregamento.')">Ver Detalhes</a> | 
+                        <a href="#" target="_blank">Código (GitHub)</a>
+                    </article>
+
+                    <article class="projeto-card" onclick="showDetail('API de Cotação de Moedas', 'Node.js/APIs/Postgres', 'Desenvolvimento de uma API RESTful para consulta e cotação de diversas moedas em tempo real. Implementado em **Node.js** com foco em alta disponibilidade e baixa latência.')">
+                        <h3>API de Cotação de Moedas</h3>
+                        <p>Desenvolvimento de uma API RESTful para consulta e cotação de diversas moedas em tempo real. Implementado em Node.js.</p>
+                        <a href="#" onclick="event.preventDefault(); showDetail('API de Cotação de Moedas', 'Node.js/APIs/Postgres', 'Desenvolvimento de uma API RESTful para consulta e cotação de diversas moedas em tempo real. Implementado em **Node.js** com foco em alta disponibilidade e baixa latência.')">Ver Detalhes</a> | 
+                        <a href="#" target="_blank">Código (GitHub)</a>
+                    </article>
+                </div>
+            </section>
+
+            <section id="contato">
+                <h2> Entre em Contato</h2>
+                <p style="margin-bottom: 40px; color: #CCCCCC;">Vamos criar algo incrível juntos! Mande uma mensagem para João Victor pelas redes.</p>
+                
+                <div class="social-links">
+                    <a href="https://contate.me/5511940369426" target="_blank" class="social-icon whatsapp-icon">
+                        <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://www.instagram.com/jv._008/" target="_blank" class="social-icon instagram-icon">
+                        <img src="https://img.icons8.com/color/48/000000/instagram-new--v2.png" alt="Instagram">
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+        
+        <div id="project-detail-page" class="page-section">
+            <section id="detalhes">
+                <h2 id="detail-title"></h2>
+                
+                <div class="detalhes-container">
+                    <p id="detail-summary" style="font-size: 1.2rem; margin-bottom: 30px; color: var(--cor-primaria); text-align: center;"></p>
+
+                    <img id="detail-mockup" src="https://via.placeholder.com/1000x500/0A0A1F/00FFFF?text=Mockup+do+Sistema" alt="Captura de tela do Projeto" class="mockup-img">
+
+                    <h3>📜 Descrição e Desafios</h3>
+                    <p id="detail-description"></p>
+                    <br>
+                    <h3>🔧 Tecnologias Utilizadas</h3>
+                    <div id="detail-tech" class="tecnologias-usadas">
+                    </div>
+                    <br>
+
+                    <div class="links-projeto" style="text-align: center;">
+                        <a href="[Link para Demo Online]" target="_blank">Ver Demonstração</a>
+                        <a href="[Link para o Repositório GitHub]" target="_blank" style="background-color: var(--cor-secundaria); color: white;">Ver Código Fonte</a>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 40px;"><a onclick="showSection('home-page', 'projetos')" style="color: var(--cor-secundaria); text-decoration: none; cursor: pointer;">&larr; Voltar para a lista de projetos</a></p>
+            </section>
+        </div>
+
+        <div id="habilidades-page" class="page-section">
+            <section id="habilidades">
+                <h2> Habilidades e Stack Tecnológico</h2>
+                
+                <p style="text-align: center; max-width: 700px; margin: 0 auto 50px; color: #CCCCCC;">
+                    Detalhes das ferramentas e linguagens que utilizo no desenvolvimento de sistemas, separadas por domínio.
+                </p>
+
+                <div class="habilidades-grid">
+                    
+                    <article class="categoria-card">
+                        <h3>Back-end & Servidor</h3>
+                        <ul>
+                            <li>Python <span class="nivel" style="background-color: #3776AB;">Avançado</span></li>
+                            <li>Node.js (Básico) <span class="nivel" style="background-color: orange;">Intermediário</span></li>
+                            <li>Django <span class="nivel" style="background-color: #004D40;">Avançado</span></li>
+                            <li>REST APIs <span class="nivel" style="background-color: #00FFFF; color: #000;">Avançado</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="categoria-card">
+                        <h3>Front-end & UI/UX</h3>
+                        <ul>
+                            <li>HTML5/CSS3 <span class="nivel" style="background-color: #E44D26;">Avançado</span></li>
+                            <li>JavaScript (ES6+) <span class="nivel" style="background-color: #F0DB4F; color: #000;">Avançado</span></li>
+                            <li>React <span class="nivel" style="background-color: #61DAFB; color: #000;">Iniciante</span></li>
+                            <li>Responsividade <span class="nivel" style="background-color: #9933FF;">Avançado</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="categoria-card">
+                        <h3>Banco de Dados & DevOps</h3>
+                        <ul>
+                            <li>SQL (Postgres/MySQL) <span class="nivel" style="background-color: #336791;">Avançado</span></li>
+                            <li>Git & GitHub <span class="nivel" style="background-color: #F1502F;">Avançado</span></li>
+                            <li>Docker (Básico) <span class="nivel" style="background-color: #0db7ed;">Intermediário</span></li>
+                            <li>Linux (Ambiente) <span class="nivel" style="background-color: #000000;">Intermediário</span></li>
+                        </ul>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>João Victor &copy; 2025 | Desenvolvido com código e paixão.</p>
+        <div style="margin-top: 10px;">
+            <a href="[Link GitHub]" style="color: var(--cor-primaria); margin: 0 10px;">GitHub</a>
+            <a href="[Link LinkedIn]" style="color: var(--cor-primaria); margin: 0 10px;">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script>
+        // Função para mostrar apenas a seção desejada e esconder as outras
+        function showSection(sectionId, targetAnchor = null) {
+            // Esconde todas as seções (páginas)
+            document.getElementById('home-page').style.display = 'none';
+            document.getElementById('project-detail-page').style.display = 'none';
+            document.getElementById('habilidades-page').style.display = 'none';
+
+            // Mostra a seção desejada
+            document.getElementById(sectionId).style.display = 'block';
+            
+            // Rola para o topo da página ao mudar de página
+            window.scrollTo(0, 0);
+
+            // Rola para uma âncora específica dentro da página (ex: Contato)
+            if (targetAnchor) {
+                setTimeout(() => {
+                    const targetElement = document.getElementById(targetAnchor);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 50); // Pequeno atraso para garantir que a página seja renderizada antes de rolar
+            }
+        }
+        
+        // Função para rolar internamente na HOME
+        function scrollToSection(anchorId) {
+            showSection('home-page');
+            setTimeout(() => {
+                const targetElement = document.getElementById(anchorId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 50);
+        }
+                
+        // Função para preencher e exibir a página de Detalhes do Projeto
+        function showDetail(title, techSummary, description) {
+            // Atualiza o conteúdo da página de detalhes
+            document.getElementById('detail-title').innerText = title;
+            document.getElementById('detail-summary').innerText = techSummary;
+            document.getElementById('detail-description').innerText = description;
+            
+            // Exemplo simples de preenchimento das tags de tecnologia
+            const techContainer = document.getElementById('detail-tech');
+            techContainer.innerHTML = '';
+            techSummary.split('/').forEach(tech => {
+                const span = document.createElement('span');
+                span.innerText = tech.trim();
+                techContainer.appendChild(span);
+            });
+
+            // Altera para a página de detalhes
+            showSection('project-detail-page');
+        }
+    </script>
+
+</body>
+</html>
